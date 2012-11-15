@@ -1,4 +1,12 @@
 Suntest::Application.routes.draw do
+
+  root to: 'search#home'
+  match '/search/:type', to: 'search#search', via: :get, as: 'search'
+  match '/results', to: 'search#process_query', via: :get
+
+  resources :books, except: [:edit, :update]
+  resources :authors, except: [:edit, :update]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

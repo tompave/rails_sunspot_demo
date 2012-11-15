@@ -1,0 +1,36 @@
+@mixin box_model {
+	border: 1px solid #888;
+	border-radius: 6px;
+	background-color: #CCC;
+	padding: 7px 12px;
+}
+
+
+div.search_container {
+	@include box_model;
+	width: 50%;
+	margin: 40px auto 10px;
+
+}
+
+ul.search_select {
+	list-style: none;
+	width: 50%;
+	margin: 6px auto;
+	padding: auto;
+	li {
+		display: inline;
+		margin: 0px 20px;
+	}
+}
+
+
+.debug_dump {
+	@include box_model;
+	width: 60%;
+	margin: 40px auto 10px;
+}
+
+div.input_field {
+	margin: 3px 0px 10px;
+}
