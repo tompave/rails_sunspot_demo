@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(:version => 20121115160432) do
   add_index "books", ["year"], :name => "index_books_on_year"
 
   create_table "chapters", :force => true do |t|
-    t.string   "title"
     t.text     "body"
     t.integer  "number"
     t.integer  "book_id"
@@ -49,7 +48,5 @@ ActiveRecord::Schema.define(:version => 20121115160432) do
 
   add_index "chapters", ["number", "book_id"], :name => "index_chapters_on_number_and_book_id", :unique => true
   add_index "chapters", ["number"], :name => "index_chapters_on_number"
-  add_index "chapters", ["title", "book_id"], :name => "index_chapters_on_title_and_book_id", :unique => true
-  add_index "chapters", ["title"], :name => "index_chapters_on_title"
 
 end

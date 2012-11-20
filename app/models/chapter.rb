@@ -3,7 +3,6 @@
 # Table name: chapters
 #
 #  id         :integer          not null, primary key
-#  title      :string(255)
 #  body       :text
 #  number     :integer
 #  book_id    :integer
@@ -12,11 +11,10 @@
 #
 
 class Chapter < ActiveRecord::Base
-  attr_accessible :title, :body, :number
+  attr_accessible :body, :number
 
   # solr-sunspot search
   searchable do
-  	text :title
   	text :body
   	string :book_id
   end
